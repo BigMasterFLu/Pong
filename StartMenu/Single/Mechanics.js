@@ -2,7 +2,8 @@
             const movable2 = document.getElementById("moveable2");
             const ball = document.getElementById("ball");
             const scoreboard = document.getElementById("scoreboard");
-
+            const hsboard = document.getElementById("highScore")
+            
             // Initial positions and scores
             let topPosition = window.innerHeight / 2 - 87.5;
             let topPosition2 = window.innerHeight / 2 - 87.5;
@@ -11,6 +12,7 @@
             let speedX = 0;
             let speedY = 0;
             let player1Score = 0;
+            let highScore = 0;
 
             // Define the maximum and minimum limits for paddles
             const maxTop = 0;
@@ -20,8 +22,12 @@
             function updateScoreboard() {
               player1Score++;
               scoreboard.textContent = `${player1Score}`;
+              if (player1Score > highScore) {
+                highScore = player1Score;
+              }
+              hsboard.textContent = `Highscore: ${highScore}`;
             }
-
+            
             // Function to set a random direction within 45 degrees toward the left or right wall
             function setRandomDirection(isLeft) {
               const angle = (Math.random() * 45 + 20) * (Math.PI / 180); // Convert to radians
@@ -45,7 +51,9 @@
 
               // Set a random direction after a 2-second delay
               setTimeout(() => {
-                setRandomDirection(!missedByLeft); // Set direction toward the scoring player
+                setRandomDirection(!missedByLeft); 
+                player1Score = -1;
+                updateScoreboard();// Set direction toward the scoring player
                 moveBall(); // Start moving the ball
               }, 2000);
             }
