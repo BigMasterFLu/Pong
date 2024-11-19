@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Game Settings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .settings-container {
+            display: inline-block;
+            text-align: left;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .setting-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select, input[type="range"], input[type="checkbox"] {
+            margin-top: 5px;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Pong Game Settings</h1>
+
+<div class="settings-container">
+    <!-- Difficulty Setting -->
+    <div class="setting-group">
+        <label for="difficulty">Difficulty</label>
+        <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+    </div>
+
+    <!-- Paddle Speed -->
+    <div class="setting-group">
+        <label for="paddle-speed">Paddle Speed</label>
+        <input type="range" id="paddle-speed" min="1" max="10" value="5">
+        <span id="paddle-speed-value">5</span>
+    </div>
+
+    <!-- Ball Speed -->
+    <div class="setting-group">
+        <label for="ball-speed">Ball Speed</label>
+        <input type="range" id="ball-speed" min="1" max="10" value="5">
+        <span id="ball-speed-value">5</span>
+    </div>
+
+    <!-- Sound Toggle -->
+    <div class="setting-group">
+        <label for="sound-toggle">Sound</label>
+        <input type="checkbox" id="sound-toggle" checked>
+        <span id="sound-status">On</span>
+    </div>
+
+    <!-- Control Method -->
+    <div class="setting-group">
+        <label for="control-method">Control Method</label>
+        <select id="control-method">
+            <option value="keyboard">Keyboard</option>
+            <option value="gamepad">Gamepad</option>
+        </select>
+    </div>
+
+    <!-- Apply Button -->
+    <button class="btn" onclick="applySettings()">Apply Settings</button>
+</div>
+
+<script src ="Settings.js">
+
+</script>
+
+</body>
+</html>
