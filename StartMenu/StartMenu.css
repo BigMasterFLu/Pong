@@ -22,16 +22,16 @@
         margin-bottom: 30px;
     }
     #title {
-        width: 500PX;
-        max-height: 250px;
+        width: 750PX;
+        max-height: 300px;
         overflow: hidden; 
         object-fit: cover; 
         align-content: center
     }
     button {
-        background-color: #00ff00;
-        color: black;
-        font-size: 1.2rem;
+        background-color: black;
+        color: #a04095;
+        font-size: 50px;
         padding: 15px 30px;
         margin: 15px;
         border: none;
@@ -41,6 +41,6 @@
     }
 
     button:hover {
-        background-color: #009900;
-        
+        background-color: #272727;
+        color: #fc66ea;
     }
