@@ -22,9 +22,11 @@
         margin-bottom: 30px;
     }
     #title {
-        width: 100PX;
-        height: auto;
-
+        width: 500PX;
+        max-height: 250px;
+        overflow: hidden; 
+        object-fit: cover; 
+        align-content: center
     }
     button {
         background-color: #00ff00;
